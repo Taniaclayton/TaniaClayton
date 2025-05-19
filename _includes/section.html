@@ -12,10 +12,20 @@
 {%- assign _slug = include.title | strip_html | slugify | default: 'untitled' -%}
 
 {%- if include.photo and include.photo-alt -%}
-	{%- capture _photo -%}
-		<img src="{{- include.photo | relative_url -}}" alt="{{- include.photo-alt -}}" class="back">
-	{%- endcapture -%}
-	{%- assign _class = 'shade-one cover dark' -%}
+  {%- assign _ext = include.photo | split: '.' | last -%}
+  {%- if _ext == "mp4" or _ext == "webm" or _ext == "ogg" -%}
+    {%- capture _photo -%}
+      <video class="back" autoplay muted loop playsinline>
+        <source src="{{ include.photo | relative_url }}" type="video/{{ _ext }}">
+        Your browser does not support the video tag.
+      </video>
+    {%- endcapture -%}
+  {%- else -%}
+    {%- capture _photo -%}
+      <img src="{{ include.photo | relative_url }}" alt="{{ include.photo-alt }}" class="back">
+    {%- endcapture -%}
+  {%- endif -%}
+  {%- assign _class = 'shade-one cover dark' -%}
 {%- else -%}
 	{%- assign _photo = '' -%}
 	{%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%}{%- endcapture -%}
