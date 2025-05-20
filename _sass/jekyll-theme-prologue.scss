@@ -74,7 +74,7 @@
 	}
 
 	input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
+		$font-family: 'Helvetica', 'Arial', sans-serif;
 		font-size: 19pt;
 		font-weight: 300;
 		line-height: 1.75em;
@@ -1117,4 +1117,9 @@ section.cover video.back {
   z-index: 0;
   pointer-events: none;
   opacity: 1;
+}
+a.button.scrolly[href*="CV"] {
+  background-color: #222 !important; // dark grey
+  border-color: #222 !important;
+  color: #fff !important;
 }
