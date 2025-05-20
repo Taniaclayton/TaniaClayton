@@ -1107,17 +1107,6 @@
 			}
 
 	}
-section.cover video.back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 1;
-}
 a.button.scrolly[href*="CV"] {
   background-color: #222 !important; // dark grey
   border-color: #222 !important;
