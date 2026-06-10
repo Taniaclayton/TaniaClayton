@@ -1,7 +1,5 @@
 ---
-import { site } from '../data/site';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const cvHref = `${base}/${site.cvPath}`;
 ---
 <section id="home" class="relative min-h-[90vh] flex items-center overflow-hidden">
   <!-- Background video, dimmed so text stays legible in both themes. -->
@@ -30,22 +28,5 @@ const cvHref = `${base}/${site.cvPath}`;
       intersection of market dynamics and human behaviour. My work bridges academic theory and
       actionable insight.
     </p>
-    <div class="flex flex-wrap gap-md">
-      <a
-        href={cvHref}
-        target="_blank"
-        rel="noopener"
-        class="bg-primary text-on-primary px-lg py-md rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-sm"
-      >
-        See My CV
-        <span class="material-symbols-outlined">arrow_outward</span>
-      </a>
-      <a
-        href="#contact"
-        class="bg-inverse-surface text-inverse-on-surface px-lg py-md rounded-lg font-bold hover:opacity-90 transition-opacity"
-      >
-        Get in Touch
-      </a>
-    </div>
   </div>
 </section>

@@ -3,8 +3,8 @@ export const site = {
   name: 'Tania Clayton',
   role: 'Economics Student',
   email: 'taniamitra152@gmail.com',
-  // PLACEHOLDER social URLs — replace with your real profiles (leave '' to hide).
-  linkedin: '',
+  // Replace with your real LinkedIn profile URL (leave '' to hide).
+  linkedin: 'https://www.linkedin.com/in/tania-mitra/',
   github: 'https://github.com/Taniaclayton',
   cvPath: 'files/cv.pdf', // resolved against BASE_URL
 };

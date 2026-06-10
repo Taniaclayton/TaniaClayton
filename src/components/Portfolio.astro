@@ -9,7 +9,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <h2 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold text-inverse-on-surface">Economic Impact Analysis</h2>
     </div>
 
-    <div class="bento-grid">
+    <div class="bento-grid" id="bento">
       {projects.map((p) => (
         <a
           href={p.href ?? '#'}
@@ -48,6 +48,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           )}
         </a>
       ))}
+    </div>
+
+    <div class="mt-lg">
+      <a href={`${base}/portfolio`} class="font-label text-label-sm border-b-2 border-inverse-on-surface py-1 hover:border-primary hover:text-primary transition-all text-inverse-on-surface">SEE FULL PORTFOLIO</a>
     </div>
   </div>
 </section>

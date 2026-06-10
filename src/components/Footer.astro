@@ -1,15 +1,14 @@
 ---
 import { site } from '../data/site';
 
-const links = [
-  { label: 'Email', href: `mailto:${site.email}` },
-  site.linkedin ? { label: 'LinkedIn', href: site.linkedin } : null,
+const socialLinks = [
   site.github ? { label: 'GitHub', href: site.github } : null,
+  site.linkedin ? { label: 'LinkedIn', href: site.linkedin } : null,
 ].filter(Boolean) as { label: string; href: string }[];
 
 const year = new Date().getFullYear();
 ---
-<footer id="contact" class="bg-surface-container-lowest text-secondary-fixed w-full mt-xl">
+<footer id="contact" class="bg-surface-container-lowest text-secondary-fixed w-full mt-xl scroll-mt-[80px]">
   <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop py-lg flex flex-col gap-lg">
     <div class="flex flex-col md:flex-row justify-between items-start gap-lg border-b border-on-surface-variant/20 pb-lg">
       <div>
@@ -17,11 +16,16 @@ const year = new Date().getFullYear();
         <p class="font-body text-body-lg text-on-surface-variant max-w-sm">
           Always open to discussing economic research, potential collaborations, or the latest data trends.
         </p>
+        <p class="font-body text-body-lg text-on-surface-variant mt-md">
+          Email: <span class="text-secondary-fixed font-bold">{site.email}</span>
+        </p>
       </div>
       <div class="flex flex-col gap-sm">
-        {links.map((l) => (
+        {socialLinks.map((l) => (
           <a
             href={l.href}
+            target="_blank"
+            rel="noopener"
             class="text-[24px] md:text-[32px] font-bold hover:text-secondary-container transition-colors flex items-center gap-md"
           >
             {l.label}
