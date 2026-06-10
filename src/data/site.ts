@@ -4,7 +4,7 @@ export const site = {
   role: 'Economics Student',
   email: 'taniamitra152@gmail.com',
   // Replace with your real LinkedIn profile URL (leave '' to hide).
-  linkedin: 'https://www.linkedin.com/in/tania-mitra/',
+  linkedin: 'https://www.linkedin.com/in/tania-clayton/',
   github: 'https://github.com/Taniaclayton',
   cvPath: 'files/cv.pdf', // resolved against BASE_URL
 };
