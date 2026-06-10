@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Not found | Tania Clayton" onHome={false}>
+  <main class="pt-[120px] min-h-screen grid place-items-center text-center px-margin-mobile">
+    <div>
+      <p class="font-label text-label-sm text-primary tracking-widest uppercase mb-sm">Error 404</p>
+      <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-md">Page not found.</h1>
+      <p class="font-body text-body-lg text-on-surface-variant mb-lg">That page seems to have left the market.</p>
+      <a href={`${base}/`} class="bg-primary text-on-primary px-lg py-md rounded-lg font-bold inline-flex items-center gap-sm">
+        <span class="material-symbols-outlined">home</span> Back home
+      </a>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+import { site } from '../data/site';
+
+const links = [
+  { label: 'Email', href: `mailto:${site.email}` },
+  site.linkedin ? { label: 'LinkedIn', href: site.linkedin } : null,
+  site.github ? { label: 'GitHub', href: site.github } : null,
+].filter(Boolean) as { label: string; href: string }[];
+
+const year = new Date().getFullYear();
+---
+<footer id="contact" class="bg-surface-container-lowest text-secondary-fixed w-full mt-xl">
+  <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop py-lg flex flex-col gap-lg">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-lg border-b border-on-surface-variant/20 pb-lg">
+      <div>
+        <h2 class="font-display text-[32px] font-extrabold text-secondary-fixed mb-md">Let's connect.</h2>
+        <p class="font-body text-body-lg text-on-surface-variant max-w-sm">
+          Always open to discussing economic research, potential collaborations, or the latest data trends.
+        </p>
+      </div>
+      <div class="flex flex-col gap-sm">
+        {links.map((l) => (
+          <a
+            href={l.href}
+            class="text-[24px] md:text-[32px] font-bold hover:text-secondary-container transition-colors flex items-center gap-md"
+          >
+            {l.label}
+            <span class="material-symbols-outlined">north_east</span>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-md">
+      <div class="font-display text-headline-md font-bold text-secondary-fixed">{site.name}</div>
+      <p class="font-label text-label-sm text-on-surface-variant/80">
+        © {year} {site.name}. Built for the modern economist.
+      </p>
+    </div>
+  </div>
+</footer>

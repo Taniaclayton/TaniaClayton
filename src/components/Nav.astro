@@ -1,0 +1,85 @@
+---
+import { navLinks, site } from '../data/site';
+import ThemeToggle from './ThemeToggle.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const cvHref = `${base}/${site.cvPath}`;
+// On sub-pages (e.g. /blog) the in-page anchors should point back to the home page.
+const homePath = `${base}/`;
+const { onHome = true } = Astro.props;
+const linkHref = (href: string) => (onHome ? href : `${homePath}${href}`);
+---
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur border-b border-outline-variant">
+  <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop py-md flex justify-between items-center">
+    <a href={homePath} class="font-display text-[24px] font-extrabold tracking-tighter text-on-surface">
+      {site.name}
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex gap-lg items-center">
+      {navLinks.map((l) => (
+        <a
+          href={linkHref(l.href)}
+          data-nav={l.href}
+          class="nav-link font-body text-body-lg text-on-surface-variant hover:text-primary transition-colors"
+        >{l.label}</a>
+      ))}
+      <a
+        href={cvHref}
+        target="_blank"
+        rel="noopener"
+        class="bg-primary-container text-on-primary-container px-md py-sm font-body rounded hover:opacity-90 active:scale-95 transition-all"
+      >See My CV</a>
+      <ThemeToggle />
+    </div>
+
+    <!-- Mobile controls -->
+    <div class="md:hidden flex items-center gap-sm">
+      <ThemeToggle />
+      <button id="menu-toggle" aria-label="Open menu" class="text-on-surface grid place-items-center w-10 h-10">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-surface z-[60] flex-col items-center justify-center gap-lg hidden">
+  <button id="menu-close" aria-label="Close menu" class="absolute top-md right-margin-mobile text-on-surface">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  {navLinks.map((l) => (
+    <a href={linkHref(l.href)} class="mobile-link font-display text-[32px] font-extrabold text-on-surface">{l.label}</a>
+  ))}
+  <a href={cvHref} target="_blank" rel="noopener" class="mt-md bg-primary-container text-on-primary-container px-lg py-sm rounded font-body">See My CV</a>
+</div>
+
+<script>
+  const menu = document.getElementById('mobile-menu');
+  const open = () => { menu?.classList.replace('hidden', 'flex'); document.body.style.overflow = 'hidden'; };
+  const close = () => { menu?.classList.replace('flex', 'hidden'); document.body.style.overflow = ''; };
+  document.getElementById('menu-toggle')?.addEventListener('click', open);
+  document.getElementById('menu-close')?.addEventListener('click', close);
+  document.querySelectorAll('.mobile-link').forEach((l) => l.addEventListener('click', close));
+
+  // Scroll-spy: highlight the nav link for the section in view (home page only).
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav-link'));
+  const sections = links
+    .map((l) => document.querySelector(l.dataset.nav || ''))
+    .filter((el): el is HTMLElement => el instanceof HTMLElement);
+  if (sections.length) {
+    const setActive = () => {
+      let current = sections[0]?.id;
+      for (const s of sections) {
+        if (window.scrollY >= s.offsetTop - 150) current = s.id;
+      }
+      links.forEach((l) => {
+        const on = l.dataset.nav === `#${current}`;
+        l.classList.toggle('text-primary', on);
+        l.classList.toggle('text-on-surface-variant', !on);
+      });
+    };
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  }
+</script>

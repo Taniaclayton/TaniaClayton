@@ -1,0 +1,51 @@
+---
+import { site } from '../data/site';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const cvHref = `${base}/${site.cvPath}`;
+---
+<section id="home" class="relative min-h-[90vh] flex items-center overflow-hidden">
+  <!-- Background video, dimmed so text stays legible in both themes. -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-25 pointer-events-none"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+  >
+    <source src={`${base}/videos/hero.mp4`} type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-b from-surface/60 via-surface/40 to-surface"></div>
+
+  <div class="relative max-w-content mx-auto w-full px-margin-mobile md:px-margin-desktop py-xl">
+    <div class="relative">
+      <div class="absolute -top-12 -left-8 w-24 h-24 bg-secondary-container opacity-20 rounded-full blur-2xl"></div>
+      <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-md leading-tight">
+        Hi, I'm <span class="text-primary">Tania</span>.<br />
+        Mapping global patterns.
+      </h1>
+    </div>
+    <p class="font-body text-body-lg max-w-2xl text-on-surface-variant mb-lg font-light leading-relaxed">
+      I'm an economics student beginning my Master of Economics (MECON) at NUS, analysing the
+      intersection of market dynamics and human behaviour. My work bridges academic theory and
+      actionable insight.
+    </p>
+    <div class="flex flex-wrap gap-md">
+      <a
+        href={cvHref}
+        target="_blank"
+        rel="noopener"
+        class="bg-primary text-on-primary px-lg py-md rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-sm"
+      >
+        See My CV
+        <span class="material-symbols-outlined">arrow_outward</span>
+      </a>
+      <a
+        href="#contact"
+        class="bg-inverse-surface text-inverse-on-surface px-lg py-md rounded-lg font-bold hover:opacity-90 transition-opacity"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,4 +1,21 @@
-/_site
-*.gem
-.sass-cache
-Gemfile.lock
+# build output
+dist/
+.output/
+
+# dependencies
+node_modules/
+
+# astro
+.astro/
+
+# environment / logs
+.env
+.env.production
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor / OS
+.DS_Store
+.vscode/
+*.log
