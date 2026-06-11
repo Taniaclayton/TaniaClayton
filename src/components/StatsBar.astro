@@ -6,8 +6,8 @@ const stats = [
   { label: "WHERE I'M AT", value: 'Chennai / Singapore', accent: 'text-on-surface-variant' },
 ];
 ---
-<section class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop pb-xl">
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-gutter border-t border-outline-variant pt-lg">
+<div class="border-t border-outline-variant pt-lg">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
     {stats.map((s) => (
       <div>
         <span class={`font-label text-label-sm block mb-xs ${s.accent}`}>{s.label}</span>
@@ -15,4 +15,4 @@ const stats = [
       </div>
     ))}
   </div>
-</section>
+</div>

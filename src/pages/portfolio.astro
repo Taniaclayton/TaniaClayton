@@ -6,23 +6,38 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <BaseLayout title="Portfolio | Tania Clayton" onHome={false}>
   <main class="pt-[120px] min-h-screen pb-xl">
     <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop">
-      <span class="font-label text-label-sm text-primary mb-sm inline-block">Portfolio</span>
+      <span class="font-label text-label-sm text-primary mb-sm inline-block uppercase tracking-widest">Portfolio</span>
       <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-lg">All Work</h1>
 
-      <div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg">
         {projects.map((p) => (
           <a
             href={p.href ?? '#'}
-            class="group flex items-center gap-md py-lg border-b border-outline-variant hover:border-primary transition-all"
+            class="group flex flex-col rounded-xl overflow-hidden border border-outline-variant hover:border-primary transition-all bg-surface-container"
           >
-            <div class="flex-1">
-              <span class="font-label text-label-sm text-primary mb-xs block">{p.category}</span>
-              <h2 class="font-display text-headline-md font-bold group-hover:text-primary transition-colors mb-xs">{p.title}</h2>
-              {p.description && (
-                <p class="font-body text-body-md text-on-surface-variant">{p.description}</p>
+            <!-- Image area: add an image filename to projects.ts to fill this -->
+            <div class="relative aspect-[4/3] overflow-hidden bg-surface-container-high">
+              {p.image ? (
+                <img
+                  src={`${base}/images/${p.image}`}
+                  alt={p.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-outline-variant">
+                  <span class="material-symbols-outlined text-[48px]">add_photo_alternate</span>
+                </div>
               )}
             </div>
-            <span class="material-symbols-outlined text-outline-variant group-hover:text-primary group-hover:translate-x-2 transition-all flex-shrink-0">arrow_forward</span>
+
+            <!-- Card content -->
+            <div class="p-md flex flex-col gap-xs flex-1">
+              <span class="font-label text-label-sm text-primary uppercase tracking-widest">{p.category}</span>
+              <h2 class="font-display text-headline-md font-bold group-hover:text-primary transition-colors">{p.title}</h2>
+              {p.description && (
+                <p class="font-body text-body-md text-on-surface-variant mt-xs">{p.description}</p>
+              )}
+            </div>
           </a>
         ))}
       </div>
