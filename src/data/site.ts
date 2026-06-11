@@ -6,7 +6,7 @@ export const site = {
   // Replace with your real LinkedIn profile URL (leave '' to hide).
   linkedin: 'https://www.linkedin.com/in/tania-clayton/',
   github: 'https://github.com/Taniaclayton',
-  cvPath: 'files/cv.pdf', // resolved against BASE_URL
+  cvPath: 'files/cv.pdf?v=2', // bump ?v= whenever you replace the file to bust mobile cache
 };
 
 export const navLinks = [
