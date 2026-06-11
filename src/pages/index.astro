@@ -1,20 +1,19 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import StatsBar from '../components/StatsBar.astro';
-import Portfolio from '../components/Portfolio.astro';
-import BlogList from '../components/BlogList.astro';
-
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
 ---
 <BaseLayout>
   <main class="pt-[72px]">
     <Hero />
-    <StatsBar />
-    <Portfolio />
-    <BlogList posts={posts} />
+    <section id="about" class="py-xl max-w-content mx-auto px-margin-mobile md:px-margin-desktop scroll-mt-[80px]">
+      <span class="font-label text-label-sm text-primary mb-sm inline-block">About me</span>
+      <h2 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-lg">Who I Am</h2>
+      <div class="max-w-2xl">
+        <p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+          <!-- Add your about text here -->
+          Your about text goes here. Tell readers about yourself, your background, your interests, and what drives your work.
+        </p>
+      </div>
+    </section>
   </main>
 </BaseLayout>

@@ -2,7 +2,6 @@
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <section id="home" class="relative min-h-[90vh] flex items-center overflow-hidden">
-  <!-- Background video, dimmed so text stays legible in both themes. -->
   <video
     class="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-25 pointer-events-none"
     autoplay
@@ -15,14 +14,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </video>
   <div class="absolute inset-0 bg-gradient-to-b from-surface/60 via-surface/40 to-surface"></div>
 
-  <div class="relative max-w-content mx-auto w-full px-margin-mobile md:px-margin-desktop py-xl">
-    <div class="relative">
-      <div class="absolute -top-12 -left-8 w-24 h-24 bg-secondary-container opacity-20 rounded-full blur-2xl"></div>
-      <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-md leading-tight">
-        Hi, I'm <span class="text-primary">Tania</span>.<br />
-        Mapping global patterns.
-      </h1>
-    </div>
+  <div class="relative max-w-content mx-auto w-full px-margin-mobile md:px-margin-desktop py-xl flex flex-col items-center text-center">
+    <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-md leading-tight">
+      Hi, I'm <span class="text-primary">Tania</span>.<br />
+      Mapping global patterns.
+    </h1>
     <p class="font-body text-body-lg max-w-2xl text-on-surface-variant mb-lg font-light leading-relaxed">
       I'm an economics student beginning my Master of Economics (MECON) at NUS, analysing the
       intersection of market dynamics and human behaviour. My work bridges academic theory and

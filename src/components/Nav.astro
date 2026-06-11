@@ -4,10 +4,19 @@ import ThemeToggle from './ThemeToggle.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const cvHref = `${base}/${site.cvPath}`;
-// On sub-pages (e.g. /blog) the in-page anchors should point back to the home page.
 const homePath = `${base}/`;
 const { onHome = true } = Astro.props;
-const linkHref = (href: string) => (onHome ? href : `${homePath}${href}`);
+
+const linkHref = (href: string) => {
+  if (!href.startsWith('#')) return `${base}${href}`;
+  if (href === '#contact') return '#contact'; // footer exists on every page
+  return onHome ? href : `${homePath}${href}`;
+};
+
+const isActivePage = (href: string) => {
+  if (href.startsWith('#')) return false;
+  return Astro.url.pathname.startsWith(`${base}${href}`);
+};
 ---
 <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur border-b border-outline-variant">
   <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop py-md flex justify-between items-center">
@@ -20,8 +29,8 @@ const linkHref = (href: string) => (onHome ? href : `${homePath}${href}`);
       {navLinks.map((l) => (
         <a
           href={linkHref(l.href)}
-          data-nav={l.href}
-          class="nav-link font-body text-body-lg text-on-surface-variant hover:text-primary transition-colors"
+          data-nav={l.href.startsWith('#') ? l.href : undefined}
+          class:list={["nav-link font-body text-body-lg hover:text-primary transition-colors", isActivePage(l.href) ? 'text-primary' : 'text-on-surface-variant']}
         >{l.label}</a>
       ))}
       <a

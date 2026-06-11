@@ -32,7 +32,7 @@ export default {
         display: ['"Hanken Grotesk"', 'sans-serif'],
         headline: ['"Hanken Grotesk"', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
-        label: ['"JetBrains Mono"', 'monospace'],
+        label: ['"Dancing Script"', 'cursive'],
       },
       fontSize: {
         'display-lg': ['48px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
@@ -40,7 +40,7 @@ export default {
         'headline-md': ['24px', { lineHeight: '1.3', fontWeight: '700' }],
         'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
         'body-md': ['16px', { lineHeight: '1.5', fontWeight: '400' }],
-        'label-sm': ['13px', { lineHeight: '1.0', letterSpacing: '0.05em', fontWeight: '500' }],
+        'label-sm': ['17px', { lineHeight: '1.2', letterSpacing: '0', fontWeight: '600' }],
       },
       borderRadius: {
         sm: '0.25rem',

@@ -11,7 +11,7 @@ export const site = {
 
 export const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Blog', href: '#blog' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '#contact' },
 ];
