@@ -12,10 +12,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg">
         {projects.map((p) => (
           <a
-            href={p.href ?? '#'}
+            href={`${base}/portfolio/${p.slug}`}
             class="group flex flex-col rounded-xl overflow-hidden border border-outline-variant hover:border-primary transition-all bg-surface-container"
           >
-            <!-- Image area: add an image filename to projects.ts to fill this -->
             <div class="relative aspect-[4/3] overflow-hidden bg-surface-container-high">
               {p.image ? (
                 <img
@@ -29,8 +28,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 </div>
               )}
             </div>
-
-            <!-- Card content -->
             <div class="p-md flex flex-col gap-xs flex-1">
               <span class="font-label text-label-sm text-primary uppercase tracking-widest">{p.category}</span>
               <h2 class="font-display text-headline-md font-bold group-hover:text-primary transition-colors">{p.title}</h2>

@@ -1,9 +1,7 @@
 ---
-// Light/dark toggle button. The pre-paint init lives in BaseLayout's <head>;
-// this only flips the class and persists the choice.
 ---
 <button
-  id="theme-toggle"
+  data-theme-toggle
   type="button"
   aria-label="Toggle light and dark theme"
   class="grid place-items-center w-10 h-10 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors"
@@ -18,10 +16,11 @@
 </style>
 
 <script>
-  const btn = document.getElementById('theme-toggle');
-  btn?.addEventListener('click', () => {
-    const isLight = document.documentElement.classList.toggle('light');
-    document.documentElement.classList.toggle('dark', !isLight);
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light');
+      document.documentElement.classList.toggle('dark', !isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
   });
 </script>
