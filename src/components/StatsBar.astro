@@ -1,12 +1,12 @@
 ---
 const stats = [
   { label: 'WHAT I DO', value: 'MECON @ NUS', accent: 'text-primary' },
-  { label: 'WHAT I LIKE', value: 'Behavioral Econ/Finance, Urban Design, Gender Gaps', accent: 'text-secondary' },
+  { label: 'WHAT I LIKE', value: 'Behavioral Econ/Finance, Urban Design, Gender Gaps', accent: 'text-secondary' },
   { label: "WHERE I'M AT", value: 'Chennai / Singapore', accent: 'text-on-surface-variant' },
 ];
 ---
 <div class="border-t border-outline-variant pt-lg">
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-gutter text-center">
     {stats.map((s) => (
       <div>
         <span class={`font-label text-label-sm block mb-xs ${s.accent}`}>{s.label}</span>
