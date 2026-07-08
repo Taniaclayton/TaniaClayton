@@ -8,13 +8,14 @@ const socialLinks = [
 
 const year = new Date().getFullYear();
 ---
-<footer id="contact" class="bg-surface-container-lowest text-on-surface w-full mt-xl scroll-mt-[80px]">
-  <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop py-lg flex flex-col gap-lg">
-    <div class="flex flex-col md:flex-row justify-between items-start gap-lg border-b border-outline-variant pb-lg">
+<footer id="contact" class="bg-surface-container-lowest text-on-surface w-full mt-lg scroll-mt-[80px]">
+  <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop py-md flex flex-col gap-md">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-md border-b border-outline-variant pb-md">
       <div>
         <h2 class="font-display text-[32px] font-extrabold text-on-surface mb-md">Feel free to reach out!</h2>
         <p class="font-body text-body-lg text-on-surface-variant max-w-sm">
-        I enjoy exchanging ideas and experiences. If you'd like to chat, collaborate or just need some guidance, don't hesitate to connect through my social links.
+        I enjoy exchanging ideas and experiences. 
+        If you'd like to chat, collaborate or just need some guidance, don't hesitate to connect through my social links.
         </p>
         <p class="font-body text-body-lg text-on-surface-variant mt-md">
           Email: <span class="text-primary font-bold">{site.email}</span>
@@ -34,9 +35,8 @@ const year = new Date().getFullYear();
         ))}
       </div>
     </div>
-    <div class="flex flex-col md:flex-row justify-between items-center gap-md">
-      <div class="font-display text-headline-md font-bold text-on-surface">{site.name}</div>
-      <p class="font-label text-label-sm text-on-surface-variant/80">
+    <div class="flex justify-center">
+      <p class="font-label text-label-sm text-on-surface-variant/40">
         © {year} {site.name}.
       </p>
     </div>

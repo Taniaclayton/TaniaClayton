@@ -8,8 +8,8 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 );
 ---
 <BaseLayout title="Blog | Tania Clayton" onHome={false}>
-  <main class="pt-[120px] min-h-screen">
-    <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop mb-lg">
+  <main class="pt-[96px] min-h-screen">
+    <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop mb-md">
       <span class="font-label text-label-sm text-primary mb-sm inline-block tracking-widest uppercase">The Ledger</span>
       <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold">All Posts</h1>
     </div>

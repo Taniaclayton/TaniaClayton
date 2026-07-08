@@ -4,12 +4,12 @@ import { projects } from '../data/projects';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout title="Portfolio | Tania Clayton" onHome={false}>
-  <main class="pt-[120px] min-h-screen pb-xl">
+  <main class="pt-[96px] min-h-screen pb-lg">
     <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop">
       <span class="font-label text-label-sm text-primary mb-sm inline-block uppercase tracking-widest">Portfolio</span>
-      <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-lg">All Work</h1>
+      <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-md">All Work</h1>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
         {projects.map((p) => (
           <a
             href={`${base}/portfolio/${p.slug}`}
