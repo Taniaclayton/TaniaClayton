@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import StatsBar from '../components/StatsBar.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout>
   <main class="pt-[72px]">
@@ -11,10 +12,35 @@ import StatsBar from '../components/StatsBar.astro';
       <div class="mt-xl">
         <span class="font-label text-label-sm text-primary mb-sm inline-block uppercase tracking-widest">About me</span>
         <h2 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-lg">Who I Am</h2>
-        <div class="max-w-2xl">
+        <div class="max-w-2xl flex flex-col gap-md">
           <p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
-            <!-- Add your about text here -->
-            Your about text goes here. Tell readers about yourself, your background, your interests, and what drives your work.
+            I'm a Graduate economics student at NUS, interested in the interaction between market
+            dynamics and human behaviour. I'm really into people-centric roles where I can observe
+            and ideate tangentially.
+          </p>
+          <p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+            I love to understand what goes on in people's brains when they make decisions and why
+            they so often stray from what economic theory predicts. Lately I've been thinking about
+            how cognitive inconsistencies shape microeconomic decisions and how they aggregate on
+            the larger scale.
+          </p>
+          <p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+            I came into economics from a non-math background, which meant I had to build the
+            quantitative side from scratch. Somewhere between real analysis and stochastic
+            processes, I stopped finding that intimidating and started finding it genuinely fun. My
+            coursework at Madras School of Economics covered a wide range like differential
+            equations, time series, game theory, applied econometrics, and I ended up TA-ing
+            Mathematical Methods for Economics II and Python Programming, which I think says more
+            about stubbornness than talent.
+          </p>
+          <p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+            I'm looking to work in fintech analytics, investment research, or behaviour-based
+            policy. If the role involves turning messy, complex data into inferring and making
+            sharper decisions, count me in.
+          </p>
+          <p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+            Please click on <a href={`${base}/portfolio`} class="text-primary underline">portfolio</a> to
+            find my projects and feel free to explore my social links in my contact.
           </p>
         </div>
       </div>

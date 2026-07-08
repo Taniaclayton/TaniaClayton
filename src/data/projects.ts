@@ -10,29 +10,33 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: 'post-pandemic-inflation',
-    title: 'Post-Pandemic Inflationary Trends',
-    description: 'An in-depth study of consumer price indices across the G7 nations from 2020–2023.',
-    category: 'MACROECONOMICS',
+    slug: 'event-study-nifty-100',
+    title: 'Event Study in Nifty 100 Markets',
+    category: 'EVENT STUDY',
     chipClass: 'bg-primary text-on-primary',
   },
   {
-    slug: 'game-theory-retail-pricing',
-    title: 'Game Theory in Retail Pricing',
-    category: 'CASE STUDY',
+    slug: 'drl-oligopoly-critique',
+    title: 'Critique of DRL in Oligopoly',
+    category: 'GAME THEORY',
     chipClass: 'bg-on-tertiary text-tertiary',
   },
   {
-    slug: 'central-bank-digital-currencies',
-    title: 'Central Bank Digital Currencies',
-    category: 'RESEARCH',
+    slug: 'milo-finance-dashboard',
+    title: 'Milo Finance Dashboard',
+    category: 'FINTECH',
     chipClass: 'bg-on-secondary-container text-secondary-container',
   },
   {
-    slug: 'micro-loans-emerging-markets',
-    title: 'Micro-Loans and Emerging Markets',
-    description: 'Quantitative analysis of peer-to-peer lending efficacy in Southeast Asian rural economies.',
-    category: 'DEVELOPMENT',
+    slug: 'public-econ-project',
+    title: 'Public Econ Project',
+    category: 'PUBLIC ECONOMICS',
     chipClass: 'bg-secondary text-on-secondary',
+  },
+  {
+    slug: 'stoch-project',
+    title: 'Stoch Project',
+    category: 'STOCHASTIC PROCESSES',
+    chipClass: 'bg-primary text-on-primary',
   },
 ];
