@@ -7,9 +7,7 @@
 /*
   Theming via CSS custom properties. Values are space-separated RGB triples so
   Tailwind's `rgb(var(--c-x) / <alpha-value>)` opacity modifiers keep working.
-  :root holds the DARK palette (the site's default, straight from DESIGN.md).
-  html.light overrides with a matching Material-You LIGHT palette.
-  The *-fixed tokens are theme-independent, so they are defined once on :root.
+  :root holds the dark Material-You palette, straight from DESIGN.md.
 */
 :root {
   /* surfaces */
@@ -65,49 +63,6 @@
   --c-tertiary-fixed-dim: 203 206 0;
   --c-on-tertiary-fixed: 28 29 0;
   --c-on-tertiary-fixed-variant: 72 74 0;
-}
-
-html.light {
-  /* surfaces */
-  --c-surface: 255 248 247;
-  --c-surface-dim: 231 214 216;
-  --c-surface-bright: 255 248 247;
-  --c-surface-container-lowest: 255 255 255;
-  --c-surface-container-low: 255 240 241;
-  --c-surface-container: 251 234 236;
-  --c-surface-container-high: 245 228 230;
-  --c-surface-container-highest: 239 223 224;
-  --c-on-surface: 34 25 27;
-  --c-on-surface-variant: 82 67 69;
-  --c-inverse-surface: 56 46 47;
-  --c-inverse-on-surface: 255 237 238;
-  --c-outline: 132 115 117;
-  --c-outline-variant: 215 193 196;
-  --c-surface-tint: 188 0 77;
-  --c-surface-variant: 245 221 223;
-  --c-background: 255 248 247;
-  --c-on-background: 34 25 27;
-  /* primary */
-  --c-primary: 188 0 77;
-  --c-on-primary: 255 255 255;
-  --c-primary-container: 255 217 222;
-  --c-on-primary-container: 63 0 21;
-  --c-inverse-primary: 255 178 191;
-  /* secondary */
-  --c-secondary: 140 79 0;
-  --c-on-secondary: 255 255 255;
-  --c-secondary-container: 255 220 199;
-  --c-on-secondary-container: 49 19 0;
-  /* tertiary */
-  --c-tertiary: 93 95 0;
-  --c-on-tertiary: 255 255 255;
-  --c-tertiary-container: 231 235 0;
-  --c-on-tertiary-container: 28 29 0;
-  /* error */
-  --c-error: 186 26 26;
-  --c-on-error: 255 255 255;
-  --c-error-container: 255 218 214;
-  --c-on-error-container: 65 0 2;
 }
 
 html {

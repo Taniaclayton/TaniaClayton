@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 // Material-You color token names. Each maps to a CSS variable (`--c-<name>`)
-// defined per-theme in global.css, so the same utility class works in dark & light.
+// defined in global.css.
 const tokenNames = [
   'surface', 'surface-dim', 'surface-bright',
   'surface-container-lowest', 'surface-container-low', 'surface-container',
@@ -24,7 +24,6 @@ const colors = Object.fromEntries(
 
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
-  darkMode: 'class',
   theme: {
     extend: {
       colors,

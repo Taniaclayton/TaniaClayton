@@ -30,16 +30,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
       rel="stylesheet"
     />
-    <!-- Set theme before paint to avoid a flash of the wrong palette.
-         Dark is the default; a visitor's saved choice (from the toggle) wins. -->
-    <script is:inline>
-      (() => {
-        const theme = localStorage.getItem('theme') || 'dark';
-        const root = document.documentElement;
-        root.classList.toggle('light', theme === 'light');
-        root.classList.toggle('dark', theme !== 'light');
-      })();
-    </script>
   </head>
   <body class="font-body text-body-md">
     <Nav onHome={onHome} />
