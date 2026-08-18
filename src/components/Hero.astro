@@ -14,14 +14,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </video>
   <div class="absolute inset-0 bg-gradient-to-b from-surface/60 via-surface/40 to-surface"></div>
 
-  <div class="relative max-w-content mx-auto w-full px-margin-mobile md:px-margin-desktop py-lg flex flex-col items-center text-center">
-    <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-md leading-tight">
-      Hi, I'm <span class="text-primary">Tania</span>.<br />
-      Exploring Irrational economics.
-    </h1>
-    <p class="font-body text-body-lg max-w-2xl text-on-surface-variant mb-lg font-light leading-relaxed">
-      I'm a Graduate economics student at NUS, interested in the interaction between market dynamics and human behaviour.
-     I’m really into people-centric roles where I can observe and ideate unconventionally.
-    </p>
+  <div class="relative max-w-content mx-auto w-full px-margin-mobile md:px-margin-desktop pt-lg pb-0 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-lg text-center md:text-left">
+    <div class="flex flex-col items-center md:items-start">
+      <h1 class="font-display text-display-lg-mobile md:text-display-lg font-extrabold mb-md leading-tight">
+        Hi, I'm <span class="text-primary">Tania</span>.<br />
+        Exploring Irrational economics.
+      </h1>
+      <p class="font-body text-body-lg max-w-2xl text-on-surface-variant font-light leading-relaxed">
+        I'm a Graduate economics student at NUS, interested in the interaction between market dynamics and human behaviour.
+       I’m really into people-centric roles where I can observe and ideate unconventionally.
+      </p>
+    </div>
+    <div class="shrink-0">
+      <img
+        src={`${base}/images/avatar.jpg`}
+        alt="Tania Clayton"
+        class="w-40 h-52 md:w-48 md:h-64 object-cover rounded-[50%] border-2 border-white/90"
+      />
+    </div>
   </div>
 </section>
