@@ -5,6 +5,8 @@ export interface Project {
   category: string;
   chipClass: string;
   image?: string;
+  /** 'contain' shows the whole image on a white card (for diagrams/charts); default is 'cover'. */
+  fit?: 'cover' | 'contain';
   href?: string;
 }
 
@@ -15,12 +17,15 @@ export const projects: Project[] = [
     category: 'EVENT STUDY',
     chipClass: 'bg-primary text-on-primary',
     image: 'event-study/bmp-csar.png',
+    fit: 'contain',
   },
   {
     slug: 'drl-oligopoly-critique',
     title: 'Critique of DRL in Oligopoly',
     category: 'GAME THEORY',
     chipClass: 'bg-on-tertiary text-tertiary',
+    image: 'drl-agent.png',
+    fit: 'contain',
   },
   {
     slug: 'milo-finance-dashboard',
@@ -34,11 +39,14 @@ export const projects: Project[] = [
     title: 'Public Econ Project',
     category: 'PUBLIC ECONOMICS',
     chipClass: 'bg-secondary text-on-secondary',
+    image: 'pensions.jpg',
   },
   {
     slug: 'stoch-project',
     title: 'Stoch Project',
     category: 'STOCHASTIC PROCESSES',
     chipClass: 'bg-primary text-on-primary',
+    image: 'markov-chain.png',
+    fit: 'contain',
   },
 ];

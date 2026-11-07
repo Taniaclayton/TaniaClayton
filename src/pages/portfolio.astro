@@ -4,8 +4,8 @@ import { projects } from '../data/projects';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout title="Portfolio | Tania Clayton" onHome={false}>
-  <main class="pt-[88px] min-h-screen pb-xl">
-    <div class="max-w-[1080px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <main class="pt-[128px] min-h-screen pb-xl">
+    <div class="max-w-content mx-auto px-margin-mobile md:px-margin-desktop">
       <span class="font-label text-label-sm text-primary mb-xs inline-block uppercase tracking-widest">Portfolio</span>
       <h1 class="font-display text-[40px] md:text-[48px] font-extrabold mb-lg leading-tight">All Work</h1>
 
@@ -15,12 +15,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             href={`${base}/portfolio/${p.slug}`}
             class="group flex flex-col rounded-xl overflow-hidden border border-outline-variant hover:border-primary transition-all bg-surface-container"
           >
-            <div class="relative aspect-[16/10] overflow-hidden bg-surface-container-high">
+            <div class:list={["relative aspect-[16/10] overflow-hidden", p.fit === "contain" ? "bg-white" : "bg-surface-container-high"]}>
               {p.image ? (
                 <img
                   src={`${base}/images/${p.image}`}
                   alt={p.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  class:list={["w-full h-full group-hover:scale-105 transition-transform duration-500", p.fit === "contain" ? "object-contain p-sm" : "object-cover"]}
                 />
               ) : (
                 <div class="w-full h-full flex items-center justify-center text-outline-variant">
