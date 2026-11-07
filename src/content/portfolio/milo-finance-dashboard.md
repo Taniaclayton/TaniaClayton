@@ -9,7 +9,7 @@ tags: ["Flask", "MySQL", "AWS Lightsail", "Python", "Analytics"]
 
 *Flask · MySQL · AWS Lightsail · Python · vanilla HTML/CSS/JS*
 
-I built MILO during my internship at a family-run trading and insurance startup. It takes raw end-of-day data for NSE and NASDAQ stocks, adds social sentiment and market-regime context, and turns them into one workflow: find setups, size them, plan the trade, and review how it went.
+I built MILO during my internship at a trading and insurance startup. It takes raw end-of-day data for NSE and NASDAQ stocks, adds social sentiment and market-regime context, and turns them into one workflow: find setups, size them, plan the trade, and review how it went.
 
 ## Finding setups: Banker RSI signals
 

@@ -14,6 +14,7 @@ export const projects: Project[] = [
     title: 'Event Study in Nifty 100 Markets',
     category: 'EVENT STUDY',
     chipClass: 'bg-primary text-on-primary',
+    image: 'event-study/bmp-csar.png',
   },
   {
     slug: 'drl-oligopoly-critique',
@@ -26,6 +27,7 @@ export const projects: Project[] = [
     title: 'Milo Finance Dashboard',
     category: 'FINTECH',
     chipClass: 'bg-on-secondary-container text-secondary-container',
+    image: 'milo/twitter-visibility.png',
   },
   {
     slug: 'public-econ-project',
